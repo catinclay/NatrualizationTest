@@ -657,14 +657,15 @@ footer {
     }
 
     .button-group {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 10px;
     }
 
     .btn {
-        width: 100%;
+        flex: 1;
         min-width: unset;
         font-size: 1rem;
-        padding: 14px 25px;
+        padding: 14px 20px;
         height: 50px;
     }
 }
@@ -690,6 +691,15 @@ footer {
 
     .study-note {
         padding: 12px;
+    }
+
+    .button-group {
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 12px 15px;
+        font-size: 0.95rem;
     }
 }
 
