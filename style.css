@@ -23,12 +23,61 @@ header {
     margin-bottom: 30px;
 }
 
-.header-actions {
+.header-controls {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 12px 15px;
+    margin-top: 20px;
     display: flex;
+    flex-direction: row;
     gap: 10px;
     justify-content: center;
-    margin-top: 15px;
+    align-items: center;
     flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    font-size: 0.9rem !important;
+}
+
+.toggle-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background: transparent;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.btn-toggle.active .toggle-checkbox {
+    background: white;
+    color: #667eea;
+}
+
+.btn-toggle:not(.active) .toggle-checkbox {
+    opacity: 0.5;
+}
+
+.toggle-text {
+    font-weight: 500;
+    font-size: 0.9rem !important;
+}
+
+.btn-toggle .toggle-text {
+    font-size: 0.9rem !important;
 }
 
 header h1 {
@@ -128,12 +177,21 @@ header h1 {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 .answer-content.visible {
     visibility: visible;
     opacity: 1;
     animation: fadeIn 0.5s ease-in;
+}
+
+.answer-content.hide-immediately {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: none !important;
 }
 
 .answer-section h2 {
@@ -152,6 +210,8 @@ header h1 {
     margin-bottom: 15px;
     border-left: 4px solid #764ba2;
     margin-top: 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .study-note {
@@ -160,6 +220,9 @@ header h1 {
     border-radius: 10px;
     border-left: 4px solid #ffc107;
     margin-top: 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    flex-shrink: 0;
 }
 
 .study-note h3 {
@@ -263,7 +326,7 @@ header h1 {
 
 .btn-small {
     padding: 8px 16px;
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
     min-width: unset;
 }
 
@@ -494,12 +557,24 @@ footer {
         font-size: 1rem;
     }
 
-    .header-actions {
+    .header-controls {
+        padding: 10px 12px;
+        margin-top: 15px;
         gap: 8px;
     }
 
     .btn-small {
         padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .toggle-checkbox {
+        width: 16px;
+        height: 16px;
+        font-size: 0.75rem;
+    }
+
+    .toggle-text {
         font-size: 0.85rem;
     }
 
@@ -559,12 +634,10 @@ footer {
     .answer-text {
         font-size: 1.1rem;
         padding: 12px;
-        max-height: 150px;
     }
 
     .study-note {
         padding: 15px;
-        max-height: 150px;
     }
 
     .study-note h3 {

@@ -11,9 +11,14 @@
         <header>
             <h1>🇺🇸 入籍考試複習工具</h1>
             <p class="subtitle">隨機練習，掌握知識</p>
-            <div class="header-actions">
+            <div class="header-controls">
                 <button class="btn btn-small" id="coverageBtn">📊 複習進度</button>
                 <button class="btn btn-small btn-danger" id="resetBtn">🔄 清空進度</button>
+                <button class="btn btn-small btn-toggle" id="filterToggleBtn">
+                    <span class="toggle-checkbox" id="toggleCheckbox">✓</span>
+                    <span class="toggle-text">跳過已對</span>
+                </button>
+                <input type="checkbox" id="filterToggle" checked style="display: none;">
             </div>
         </header>
 

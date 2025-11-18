@@ -30,6 +30,9 @@ const modalTotalCount = document.getElementById('modalTotalCount');
 const coveragePercent = document.getElementById('coveragePercent');
 const modalContent = document.querySelector('.modal-content');
 const jumpToSelectedBtn = document.getElementById('jumpToSelectedBtn');
+const filterToggle = document.getElementById('filterToggle');
+const filterToggleBtn = document.getElementById('filterToggleBtn');
+const toggleCheckbox = document.getElementById('toggleCheckbox');
 
 // 選中的題號
 let selectedQuestionNumber = null;
@@ -95,6 +98,17 @@ function getQuestionStatusIcon(questionNumber) {
     return '○';
 }
 
+// 更新 toggle 按鈕狀態
+function updateToggleButton() {
+    if (filterToggle.checked) {
+        filterToggleBtn.classList.add('active');
+        toggleCheckbox.textContent = '✓';
+    } else {
+        filterToggleBtn.classList.remove('active');
+        toggleCheckbox.textContent = '';
+    }
+}
+
 // 載入題庫
 function loadQuestions() {
     // 直接使用從 questions.js 導入的數據
@@ -102,6 +116,7 @@ function loadQuestions() {
         questions = questionsData;
         loadCoverage();
         updateStats();
+        updateToggleButton();
         loadRandomQuestion();
     } else {
         questionText.textContent = '題庫數據載入失敗，請檢查 questions.js 檔案';
@@ -123,6 +138,10 @@ function loadQuestionByNumber(number) {
 function displayQuestion() {
     if (currentQuestionIndex < 0 || currentQuestionIndex >= questions.length) return;
     
+    // 立即隱藏答案內容（在設置新內容之前）
+    answerContent.classList.add('hide-immediately');
+    answerContent.classList.remove('visible');
+    
     const question = questions[currentQuestionIndex];
     
     // 顯示問題
@@ -132,27 +151,59 @@ function displayQuestion() {
     questionStatus.className = 'question-status ' + (coverage[question.number] === true ? 'status-correct' : 
                                                      coverage[question.number] === false ? 'status-wrong' : 'status-pending');
     
-    // 隱藏答案內容
-    answerContent.classList.remove('visible');
+    // 設置答案和學習筆記（但不顯示）
+    answerText.textContent = question.answer;
+    studyNoteText.textContent = question.studyNote || '暫無學習筆記';
+    
     showAnswerBtn.classList.remove('hidden');
     correctBtn.classList.add('hidden');
     wrongBtn.classList.add('hidden');
     showAnswerBtn.disabled = false;
     
-    // 設置答案和學習筆記（但不顯示）
-    answerText.textContent = question.answer;
-    studyNoteText.textContent = question.studyNote || '暫無學習筆記';
+    // 延遲移除 hide-immediately 類，以便下次顯示時可以正常使用動畫
+    setTimeout(() => {
+        answerContent.classList.remove('hide-immediately');
+    }, 100);
 }
 
 // 載入隨機問題
 function loadRandomQuestion() {
     if (questions.length === 0) return;
 
+    // 檢查是否啟用過濾模式
+    const filterEnabled = filterToggle.checked;
+    
+    // 獲取可選的問題列表
+    let availableQuestions = [];
+    
+    if (filterEnabled) {
+        // 只選擇答錯或未複習的題目
+        availableQuestions = questions.filter((q, index) => {
+            const status = coverage[q.number];
+            return status === false || status === undefined;
+        });
+        
+        // 如果所有題目都已答對，則使用所有題目
+        if (availableQuestions.length === 0) {
+            availableQuestions = questions;
+        }
+    } else {
+        // 使用所有題目
+        availableQuestions = questions;
+    }
+    
+    if (availableQuestions.length === 0) return;
+
     // 隨機選擇一個問題（避免連續相同）
     let newIndex;
+    let attempts = 0;
     do {
-        newIndex = Math.floor(Math.random() * questions.length);
-    } while (newIndex === currentQuestionIndex && questions.length > 1);
+        const randomQuestion = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+        newIndex = questions.findIndex(q => q.number === randomQuestion.number);
+        attempts++;
+        // 防止無限循環
+        if (attempts > 100) break;
+    } while (newIndex === currentQuestionIndex && availableQuestions.length > 1);
     
     currentQuestionIndex = newIndex;
     displayQuestion();
@@ -278,6 +329,18 @@ wrongBtn.addEventListener('click', markWrong);
 coverageBtn.addEventListener('click', showCoverageModal);
 resetBtn.addEventListener('click', resetProgress);
 jumpToSelectedBtn.addEventListener('click', jumpToSelected);
+// Toggle 按鈕點擊事件
+filterToggleBtn.addEventListener('click', () => {
+    filterToggle.checked = !filterToggle.checked;
+    updateToggleButton();
+    loadRandomQuestion();
+});
+
+filterToggle.addEventListener('change', () => {
+    updateToggleButton();
+    // 當切換過濾模式時，重新載入隨機問題
+    loadRandomQuestion();
+});
 
 // 關閉按鈕事件（阻止事件冒泡）
 closeModalBtn.addEventListener('click', (e) => {

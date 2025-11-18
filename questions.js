@@ -1,6 +1,6 @@
 // 題庫數據 - 以字串形式儲存
 const questionsDataString = `Original Q#	|||	Question	|||	Answer	|||	Fun & Easy Study Note
-1	|||	What is the supreme law of the land?	|||	the Constitution	|||	
+1	|||	What is the supreme law of the land?	|||	the Constitution |||	
 2	|||	What does the Constitution do?	|||	sets up the government, defines the government, protects basic rights of Americans	|||	It's like the blueprint for our government and it lists your basic superpowers (rights).
 3	|||	The idea of self-government is in the first three words of the Constitution. What are these words?	|||	We the People	|||	These words mean that you and I (the people) are the boss of the government!
 4	|||	What is an amendment?	|||	a change (to the Constitution), an addition (to the Constitution)	|||	An amendment is just an update or a patch that fixes or improves the Constitution over time.
