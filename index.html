@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入籍考试复习工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇺🇸 入籍考试复习工具</h1>
+            <p class="subtitle">随机练习，掌握知识</p>
+            <div class="header-actions">
+                <button class="btn btn-small" id="coverageBtn">📊 复习进度</button>
+                <button class="btn btn-small btn-danger" id="resetBtn">🔄 清空进度</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="question-card" id="questionCard">
+                <div class="question-section">
+                    <div class="question-header">
+                        <h2>问题 <span class="question-number" id="questionNumber"></span></h2>
+                        <span class="question-status" id="questionStatus"></span>
+                    </div>
+                    <p class="question-text" id="questionText">加载中...</p>
+                </div>
+
+                <div class="answer-section hidden" id="answerSection">
+                    <h2>答案</h2>
+                    <p class="answer-text" id="answerText"></p>
+                    
+                    <div class="study-note">
+                        <h3>📚 学习笔记</h3>
+                        <p class="study-note-text" id="studyNoteText"></p>
+                    </div>
+                </div>
+
+                <div class="button-group" id="buttonGroup">
+                    <button class="btn btn-primary" id="showAnswerBtn">显示答案</button>
+                    <button class="btn btn-success hidden" id="correctBtn">✓ 我答对了</button>
+                    <button class="btn btn-warning hidden" id="wrongBtn">✗ 我答错了</button>
+                </div>
+
+                <div class="progress-info">
+                    <p>已答对: <span id="correctCount">0</span> / <span id="totalCount">0</span> 题</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Coverage 管理模态框 -->
+        <div class="modal hidden" id="coverageModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📊 复习进度</h2>
+                    <button class="modal-close" id="closeModalBtn">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="coverage-stats">
+                        <p>已答对: <span id="modalCorrectCount">0</span> / <span id="modalTotalCount">0</span> 题</p>
+                        <p>完成度: <span id="coveragePercent">0</span>%</p>
+                    </div>
+                    <div class="coverage-list" id="coverageList"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>继续练习，加油！💪</p>
+        </footer>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

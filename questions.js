@@ -1,0 +1,158 @@
+// 题库数据 - 以字符串形式存储
+const questionsDataString = `Original Q#	|||	Question	|||	Answer	|||	Fun & Easy Study Note
+1	|||	What is the supreme law of the land?	|||	the Constitution	|||	
+2	|||	What does the Constitution do?	|||	sets up the government, defines the government, protects basic rights of Americans	|||	It's like the blueprint for our government and it lists your basic superpowers (rights).
+3	|||	The idea of self-government is in the first three words of the Constitution. What are these words?	|||	We the People	|||	These words mean that you and I (the people) are the boss of the government!
+4	|||	What is an amendment?	|||	a change (to the Constitution), an addition (to the Constitution)	|||	An amendment is just an update or a patch that fixes or improves the Constitution over time.
+5	|||	What do we call the first ten amendments to the Constitution?	|||	the Bill of Rights	|||	This is the list of 10 guaranteed freedoms given to all Americans, like free speech and freedom of religion.
+6	|||	What is one right or freedom from the First Amendment?*	|||	speech, religion, assembly, press, petition the government	|||	It protects your right to say what you think, worship what you want, and read what you want.
+7	|||	How many amendments does the Constitution have?	|||	twenty-seven (27)	|||	The Constitution is very tough to change, so we only have 27 official updates since it was first written!
+8	|||	What did the Declaration of Independence do?	|||	announced our independence (from Great Britain), declared our independence (from Great Britain), said that the United States is free (from Great Britain)	|||	This paper was a breakup letter to the King of Great Britain, saying we were starting our own country.
+9	|||	What are two rights in the Declaration of Independence?	|||	life, liberty, pursuit of happiness	|||	These are your God-given rights; they are your personal freedom and the right to try to be happy.
+10	|||	What is freedom of religion?	|||	You can practice any religion, or not practice a religion.	|||	This means the government can never force you to join or leave a church.
+11	|||	What is the economic system in the United States?*	|||	capitalist economy, market economy	|||	Our system is like a free market shopping mall where people own businesses and compete to sell things.
+12	|||	What is the "rule of law"?	|||	Everyone must follow the law, Leaders must obey the law, Government must obey the law, No one is above the law	|||	It's the simple rule that everyone—even the President—has to obey the same laws!
+13	|||	Name one branch or part of the government?*	|||	Congress, legislative, President, executive, the courts, judicial	|||	The government is like a three-headed monster that keeps itself balanced: Executive, Legislative, and Judicial.
+14	|||	What stops one branch of government from becoming too powerful?	|||	checks and balances, separation of powers	|||	The branches have powers to check each other, like giving each other a time-out if they get too bossy.
+15	|||	Who is in charge of the executive branch?	|||	the President	|||	The President is the head manager who makes sure all the laws are actually carried out.
+16	|||	Who makes federal laws?	|||	Congress, Senate and House (of Representatives), (U.S. or national) legislature	|||	Congress is the factory where all the federal (national) laws are officially created.
+17	|||	What are the two parts of the U.S. Congress?*	|||	the Senate and House (of Representatives)	|||	Congress is split into two rooms: the Senate and the House, so they have to agree on laws.
+18	|||	How many U.S. Senators are there?	|||	one hundred (100)	|||	There are 100 Senators total, with two coming from each of the 50 states (equal representation).
+19	|||	We elect a U.S. Senator for how many years?	|||	six (6)	|||	Senators have a long six-year term so they can focus on long-term national problems.
+20	|||	Who is one of your state's U.S. Senators now?*	|||	Patty Murray, Maria Cantwell	|||	This is a local homework question! Make sure you know the names of the two Senators from your state.
+21	|||	The House of Representatives has how many voting members?	|||	four hundred thirty-five (435)	|||	The House is much bigger because the number of members depends on the population of each state.
+22	|||	We elect a U.S. Representative for how many years?	|||	two (2)	|||	Representatives have a short two-year term so they have to constantly listen to what their neighborhood wants.
+23	|||	Name your U.S. Representative.	|||	Bob Hasegawa, Victoria Hunt, Derek Stanford	|||	This is another local homework question! They only represent the small district you live in.
+24	|||	Who does a U.S. Senator represent?	|||	all people of the state	|||	They represent every single person in their state, from the biggest city to the smallest town.
+25	|||	Why do some states have more Representatives than other states?	|||	(because of) the state's population, (because) they have more people, (because) some states have more people	|||	Big states get more Representatives because the House is based on how many people live there.
+26	|||	We elect a President for how many years?	|||	four (4)	|||	A Presidential term is four years—that's enough time to start a plan and see if it works.
+27	|||	In what month do we vote for President?*	|||	November	|||	We always head to the polls to vote for the President in the month of November.
+28	|||	What is the name of the President of the United States now?*	|||	Donald Trump	|||	Current Event Alert! You must know the name of the President serving right now.
+29	|||	What is the name of the Vice President of the United States now?	|||	JD Vance	|||	Current Event Alert! You must also know the name of the Vice President serving right now.
+30	|||	If the President can no longer serve, who becomes President?	|||	the Vice President	|||	The Vice President is the official backup in case the President can't finish the job.
+31	|||	If both the President and the Vice President can no longer serve, who becomes President?	|||	the Speaker of the House	|||	This is the next person in line for the Presidency after the Vice President.
+32	|||	Who is the Commander in Chief of the military?	|||	the President	|||	The President is the ultimate boss of the entire U.S. military.
+33	|||	Who signs bills to become laws?	|||	the President	|||	Once Congress agrees on a bill, the President must sign it to make it official law.
+34	|||	Who vetoes bills?	|||	the President	|||	Veto means "I forbid"; the President can reject a bill passed by Congress.
+35	|||	What does the President's Cabinet do?	|||	advises the President	|||	The Cabinet is a team of smart experts who give the President advice on different topics (like defense or education).
+36	|||	What are two Cabinet-level positions?	|||	Secretary of... (Agriculture, Commerce, Defense, etc.), Attorney General, Vice President	|||	These are the names for the leaders of the advice team, like the Secretary of State or Secretary of Defense.
+37	|||	What does the judicial branch do?	|||	reviews laws, explains laws, resolves disputes (disagreements), decides if a law goes against the Constitution	|||	The judicial branch interprets the laws and decides if they are fair and follow the Constitution.
+38	|||	What is the highest court in the United States?	|||	the Supreme Court	|||	This is the final court; once they make a decision, it's the law of the land.
+39	|||	How many justices are on the Supreme Court?	|||	9	|||	The number has been nine for a long time, but check the current number just in case!
+40	|||	Who is the Chief Justice of the United States now?	|||	John Roberts	|||	The Chief Justice is the main judge who manages the Supreme Court.
+41	|||	Under our Constitution, some powers belong to the federal government. What is one power of the federal government?	|||	to print money, to declare war, to create an army, to make treaties	|||	These are the big powers only the national government can do, like printing all the dollar bills.
+42	|||	Under our Constitution, some powers belong to the states. What is one power of the states?	|||	provide schooling and education, provide protection (police), provide safety (fire departments), give a driver's license, approve zoning and land use	|||	These are the powers left to the state governments, like creating schools and issuing driver's licenses.
+43	|||	Who is the Governor of your state now?	|||	Bob Ferguson	|||	The Governor is like the President of your state. You need to know their current name.
+44	|||	What is the capital of your state?*	|||	Olympia	|||	You must know the name of the city where your state government meets.
+45	|||	What are the two major political parties in the United States?*	|||	Democratic and Republican	|||	These two groups are the biggest teams in U.S. politics.
+46	|||	What is the political party of the President now?	|||	Republican	|||	Current Event Alert! You need to know if the current President is a Democrat or a Republican.
+47	|||	What is the name of the Speaker of the House of Representatives now?	|||	Mike Johnson	|||	The Speaker is the leader of the House and a very powerful person in Congress.
+48	|||	There are four amendments to the Constitution about who can vote. Describe one of them.	|||	Citizens eighteen (18) and older (can vote); You don't have to pay (a poll tax) to vote; Any citizen can vote. (Women and men can vote); A male citizen of any race (can vote).	|||	These four amendments helped more people earn the right to vote over time, like women and minorities.
+49	|||	What is one responsibility that is only for United States citizens?*	|||	serve on a jury, vote in a federal election	|||	These two things are duties you should do that are only for citizens—like being a jury member.
+50	|||	Name one right only for United States citizens.	|||	vote in a federal election, run for federal office	|||	These two things are freedoms that only citizens have, like running for President.
+51	|||	What are two rights of everyone living in the United States?	|||	freedom of expression, freedom of speech, freedom of assembly, freedom to petition the government, freedom of religion, the right to bear arms	|||	Everyone, even non-citizens, is protected by these basic human rights while they are in the U.S.
+52	|||	What do we show loyalty to when we say the Pledge of Allegiance?	|||	the United States, the flag	|||	The Pledge is a promise to be loyal to the country and to its symbol, the flag.
+53	|||	What is one promise you make when you become a United States citizen?	|||	give up loyalty to other countries, defend the Constitution and laws of the United States, obey the laws of the United States, serve in the U.S. military (if needed), serve (do important work for) the nation (if needed), be loyal to the United States	|||	When you become a citizen, you take an oath to be loyal to your new country above all others.
+54	|||	How old do citizens have to be to vote for President?*	|||	eighteen (18) and older	|||	This rule was changed by the 26th Amendment so that anyone who can be drafted could vote.
+55	|||	What are two ways that Americans can participate in their democracy?	|||	vote, join a political party, help with a campaign, join a civic group, join a community group, give an elected official your opinion on an issue, call Senators and Representatives, publicly support or oppose an issue or policy, run for office, write to a newspaper	|||	There are many ways to get involved, from voting to telling your Congressperson your opinion.
+56	|||	When is the last day you can send in federal income tax forms?*	|||	April 15	|||	This is the yearly deadline for everyone to file their tax forms.
+57	|||	When must all men register for the Selective Service?	|||	at age eighteen (18), between eighteen (18) and twenty-six (26)	|||	This service is like a list of men who could be called to serve in the military if the U.S. ever had to have a draft.
+58	|||	What is one reason colonists came to America?	|||	freedom, political liberty, religious freedom, economic opportunity, practice their religion, escape persecution	|||	People came here mainly to find freedom (especially religious freedom) and better opportunities.
+59	|||	Who lived in America before the Europeans arrived?	|||	American Indians, Native Americans	|||	The Native American tribes were the original people of this land.
+60	|||	What group of people was taken to America and sold as slaves?	|||	Africans, people from Africa	|||	Sadly, Africans were forced to come here as part of a terrible, immoral system of forced labor.
+61	|||	Why did the colonists fight the British?	|||	because of high taxes (taxation without representation), because the British army stayed in their houses (boarding, quartering), because they didn't have self-government	|||	The main complaint was being forced to pay taxes without having a voice in the British government.
+62	|||	Who wrote the Declaration of Independence?	|||	(Thomas) Jefferson	|||	Thomas Jefferson was the main person who wrote and edited the Declaration of Independence.
+63	|||	When was the Declaration of Independence adopted?	|||	July 4, 1776	|||	This is the famous date when the colonies officially decided to be a new country.
+64	|||	There were 13 original states. Name three.	|||	New Hampshire, Massachusetts, Rhode Island, Connecticut, New York, New Jersey, Pennsylvania, Delaware, Maryland, Virginia, North Carolina, South Carolina, Georgia	|||	These are the original 13 colonies that declared independence from Britain.
+65	|||	What happened at the Constitutional Convention?	|||	The Constitution was written, The Founding Fathers wrote the Constitution	|||	This was a secret meeting where the leaders created the new plan for a strong federal government.
+66	|||	When was the Constitution written?	|||	1787	|||	The Constitution was created 11 years after the Declaration, because the first government plan was too weak.
+67	|||	The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.	|||	(James) Madison, (Alexander) Hamilton, (John) Jay, Publius	|||	These were a series of essays written to convince people that the new Constitution was a good idea.
+68	|||	What is one thing Benjamin Franklin is famous for?2	|||	U.S. diplomat, oldest member of the Constitutional Convention, first Postmaster General of the United States, writer of "Poor Richard's Almanac," started the first free librari3es	|||	Franklin was a smart inventor, a writer, and a great diplomat (someone who handles international relations).
+69	|||	Who is the "Father of Our Country"?	|||	(George) Washington	|||	Washington earned this title by being the great general who won the Revolutionary War.
+70	|||	Who was the first President?*	|||	(George) Washington	|||	He was chosen to be the very first leader of the United States.
+71	|||	What territory did the United States buy from France in 1803?	|||	the Louisiana Territory, Louisiana	|||	This Louisiana Purchase doubled the size of the United States overnight!
+72	|||	Name one war fought by the United States in the 1800s.	|||	War of 1812, Mexican-American War, Civil War, Spanish-American War	|||	The 1800s included the Civil War and wars that helped the U.S. expand its territory.
+73	|||	Name the U.S. war between the North and the South.	|||	the Civil War, the War between the States	|||	This was a heartbreaking internal conflict where the North fought the South to keep the country together.
+74	|||	Name one problem that led to the Civil War.	|||	slavery, economic reasons, states' rights	|||	The main reason was the South's desire to keep slavery, which the North opposed.
+75	|||	What was one important thing that Abraham Lincoln did?*	|||	freed the slaves (Emancipation Proclamation), saved (or preserved) the Union, led the United States during the Civil War	|||	Lincoln's most famous act was freeing the slaves and successfully keeping the United States from splitting apart.
+76	|||	What did the Emancipation Proclamation do?	|||	freed the slaves, freed slaves in the Confederacy, freed slaves in the Confederate states, freed slaves in most Southern states	|||	It was the official order that freed all the slaves in the states that were fighting against the U.S.
+77	|||	What did Susan B. Anthony do?	|||	fought for women's rights, fought for civil rights	|||	She was a brave leader who fought hard for the right of women to vote.
+78	|||	Name one war fought by the United States in the 1900s?*	|||	World War I, World War II, Korean War, Vietnam War, (Persian) Gulf War	|||	The U.S. became a superpower by getting involved in huge global conflicts in the 1900s.
+79	|||	Who was President during World War I?	|||	(Woodrow) Wilson	|||	Wilson led the nation during this war and was famous for trying to create a League of Nations afterward.
+80	|||	Who was President during the Great Depression and World War II?	|||	(Franklin) Roosevelt	|||	FDR was the only President elected four times, leading the country through its worst economic crisis and the biggest war.
+81	|||	Who did the United States fight in World War II?	|||	Japan, Germany, and Italy	|||	The U.S. fought these three countries, who were called the Axis Powers, to win World War II.
+82	|||	Before he was President, Eisenhower was a general. What war was he in?	|||	World War II	|||	He was a famous general who led the huge D-Day invasion against Germany in Europe.
+83	|||	During the Cold War, what was the main concern of the United States?	|||	Communism	|||	The U.S. was worried about the Soviet Union spreading a system called Communism around the world.
+84	|||	What movement tried to end racial discrimination?	|||	civil rights (movement)	|||	This was a struggle led by people who wanted equal rights and fair treatment for all races.
+85	|||	What did Martin Luther King, Jr. do?*	|||	fought for civil rights, worked for equality for all Americans	|||	He was a hero who worked peacefully to make sure all Americans were treated equally.
+86	|||	What major event happened on September 11, 2001, in the United States?	|||	Terrorists attacked the United States.	|||	This was a terrible day when terrorists flew airplanes into important buildings like the World Trade Center.
+87	|||	Name one American Indian tribe in the United States.	|||	Cherokee, Navajo, Sioux, Chippewa, Choctaw, Pueblo, Apache, Iroquois, Creek, Blackfeet, Seminole, Cheyenne, Arawak, Shawnee, Mohegan, Huron, Oneida, Lakota, Crow, Teton, Hopi, Inuit	|||	These are the names of the many different Native American groups who were here first.
+88	|||	Name one of the two longest rivers in the United States.	|||	Missouri (River), Mississippi (River)	|||	The Mississippi River and the Missouri River are the country's most important waterways.
+89	|||	What ocean is on the West Coast of the United States?	|||	Pacific (Ocean)	|||	This huge ocean borders states like California and Washington.
+90	|||	What ocean is on the East Coast of the United States?	|||	Atlantic (Ocean)	|||	This ocean borders the states where the original 13 colonies were.
+91	|||	Name one U.S. territory.	|||	Puerto Rico, U.S. Virgin Islands, American Samoa, Northern Mariana Islands, Guam	|||	Territories are lands controlled by the U.S. that are not states yet.
+92	|||	Name one state that borders Canada.	|||	Maine, New Hampshire, Vermont, New York, Pennsylvania, Ohio, Michigan, Minnesota, North Dakota, Montana, Idaho, Washington, Alaska	|||	Canada is our northern neighbor, and many U.S. states touch its border.
+93	|||	Name one state that borders Mexico.	|||	California, Arizona, New Mexico, Texas	|||	Mexico is our southern neighbor, and four U.S. states touch its border.
+94	|||	What is the capital of the United States?*	|||	Washington, D.C.	|||	This is the most important city where the President and Congress work, and it's not in any state!
+95	|||	Where is the Statue of Liberty?*	|||	New York (Harbor), Liberty Island, New Jersey, near New York City, on the Hudson (River)	|||	She is a giant green statue that welcomes immigrants arriving near New York City.
+96	|||	Why does the flag have 13 stripes?	|||	because there were 13 original colonies, because the stripes represent the original colonies	|||	The stripes show the original 13 groups that joined together to start the country.
+97	|||	Why does the flag have 50 stars?*	|||	because there is one star for each state, because each star represents a state, because there are 50 states	|||	The stars represent the 50 separate states that make up the United States today.
+98	|||	What is the name of the national anthem?	|||	The Star-Spangled Banner	|||	This is the official national song you hear at sporting events and ceremonies.
+99	|||	When do we celebrate Independence Day?*	|||	July 4	|||	This is the birthday of the USA when we celebrate the Declaration of Independence!
+100	|||	Name two national U.S. holidays.	|||	New Year's Day, Martin Luther King, Jr. Day, Presidents' Day, Memorial Day, Juneteenth, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving, Christmas	|||	These are the days that the whole nation officially celebrates and government offices are closed.`;
+
+// 解析题库字符串并返回问题数组
+function parseQuestionsData() {
+    const lines = questionsDataString.split('\n');
+    const questions = [];
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        
+        // 跳过空行和标题行
+        if (!line || line.startsWith('Original Q#')) {
+            continue;
+        }
+        
+        // 使用 ||| 分隔符分割每一行
+        const parts = line.split('|||');
+        
+        // 确保有足够的字段（题号、问题、答案、学习笔记）
+        if (parts.length >= 4) {
+            const questionNumber = parts[0].trim();
+            const question = parts[1].trim();
+            const answer = parts[2].trim();
+            const studyNote = parts[3].trim();
+            
+            // 只有当问题不为空时才添加
+            if (question) {
+                questions.push({
+                    number: questionNumber,
+                    question: question,
+                    answer: answer || '暂无答案',
+                    studyNote: studyNote || '暂无学习笔记'
+                });
+            }
+        } else if (parts.length === 3) {
+            // 处理只有题号、问题、答案的情况（没有学习笔记）
+            const questionNumber = parts[0].trim();
+            const question = parts[1].trim();
+            const answer = parts[2].trim();
+            
+            if (question) {
+                questions.push({
+                    number: questionNumber,
+                    question: question,
+                    answer: answer || '暂无答案',
+                    studyNote: '暂无学习笔记'
+                });
+            }
+        }
+    }
+    
+    return questions;
+}
+
+// 导出解析后的题库数据
+const questionsData = parseQuestionsData();
+
