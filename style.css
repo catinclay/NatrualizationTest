@@ -100,7 +100,7 @@ header h1 {
 }
 
 .status-pending {
-    background: #ff9800;
+    background: #9e9e9e;
     color: white;
 }
 
@@ -109,7 +109,7 @@ header h1 {
     line-height: 1.8;
     color: #333;
     font-weight: 500;
-    height: 150px;
+    height: 75px;
     overflow-y: auto;
     margin: 0;
 }
@@ -118,11 +118,22 @@ header h1 {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 2px solid #e0e0e0;
-    animation: fadeIn 0.5s ease-in;
     flex-shrink: 0;
     flex: 1;
     overflow-y: auto;
     min-height: 0;
+}
+
+.answer-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.answer-content.visible {
+    visibility: visible;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .answer-section h2 {
@@ -182,6 +193,10 @@ header h1 {
     transition: all 0.3s ease;
     font-weight: 600;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary {
@@ -346,6 +361,7 @@ footer {
 
 .modal-body {
     padding: 20px;
+    padding-bottom: 100px;
     overflow-y: auto;
     flex: 1;
 }
@@ -366,17 +382,34 @@ footer {
 
 .coverage-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
 .coverage-item {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    border-radius: 8px;
     border: 2px solid #e0e0e0;
-    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 60px;
+}
+
+.coverage-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coverage-item.selected {
+    border-color: #667eea;
+    border-width: 3px;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    background: #f0f4ff !important;
 }
 
 .coverage-item.coverage-correct {
@@ -390,31 +423,50 @@ footer {
 }
 
 .coverage-item.coverage-pending {
-    background: #fff3e0;
-    border-color: #ff9800;
+    background: #f5f5f5;
+    border-color: #9e9e9e;
 }
 
-.coverage-number {
+.coverage-icon {
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 1.1rem;
-    color: #667eea;
+    margin-bottom: 4px;
 }
 
-.coverage-status {
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.coverage-item.coverage-correct .coverage-status {
+.coverage-item.coverage-correct .coverage-icon {
     color: #4caf50;
 }
 
-.coverage-item.coverage-wrong .coverage-status {
+.coverage-item.coverage-wrong .coverage-icon {
     color: #f44336;
 }
 
-.coverage-item.coverage-pending .coverage-status {
-    color: #ff9800;
+.coverage-item.coverage-pending .coverage-icon {
+    color: #9e9e9e;
+}
+
+.coverage-number {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.coverage-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 20px;
+    border-top: 2px solid #e0e0e0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    text-align: center;
+}
+
+.coverage-footer .btn {
+    width: 100%;
+    max-width: 400px;
 }
 
 @keyframes fadeIn {
@@ -462,8 +514,30 @@ footer {
         max-height: 90vh;
     }
 
+    .modal-body {
+        padding-bottom: 90px;
+    }
+
+    .coverage-footer {
+        padding: 12px 15px;
+    }
+
     .coverage-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 6px;
+    }
+
+    .coverage-item {
+        padding: 10px 6px;
+        min-height: 50px;
+    }
+
+    .coverage-icon {
+        font-size: 1.3rem;
+    }
+
+    .coverage-number {
+        font-size: 0.75rem;
     }
 
     .question-card {
@@ -479,7 +553,7 @@ footer {
 
     .question-text {
         font-size: 1.2rem;
-        height: 120px;
+        height: 60px;
     }
 
     .answer-text {
@@ -510,6 +584,7 @@ footer {
         min-width: unset;
         font-size: 1rem;
         padding: 14px 25px;
+        height: 50px;
     }
 }
 
@@ -525,7 +600,7 @@ footer {
 
     .question-text {
         font-size: 1.1rem;
-        height: 100px;
+        height: 50px;
     }
 
     .answer-text {

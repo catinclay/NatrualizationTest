@@ -1,4 +1,4 @@
-// 题库数据 - 以字符串形式存储
+// 題庫數據 - 以字串形式儲存
 const questionsDataString = `Original Q#	|||	Question	|||	Answer	|||	Fun & Easy Study Note
 1	|||	What is the supreme law of the land?	|||	the Constitution	|||	
 2	|||	What does the Constitution do?	|||	sets up the government, defines the government, protects basic rights of Americans	|||	It's like the blueprint for our government and it lists your basic superpowers (rights).
@@ -101,7 +101,7 @@ const questionsDataString = `Original Q#	|||	Question	|||	Answer	|||	Fun & Easy 
 99	|||	When do we celebrate Independence Day?*	|||	July 4	|||	This is the birthday of the USA when we celebrate the Declaration of Independence!
 100	|||	Name two national U.S. holidays.	|||	New Year's Day, Martin Luther King, Jr. Day, Presidents' Day, Memorial Day, Juneteenth, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving, Christmas	|||	These are the days that the whole nation officially celebrates and government offices are closed.`;
 
-// 解析题库字符串并返回问题数组
+// 解析題庫字串並返回問題陣列
 function parseQuestionsData() {
     const lines = questionsDataString.split('\n');
     const questions = [];
@@ -109,7 +109,7 @@ function parseQuestionsData() {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         
-        // 跳过空行和标题行
+        // 跳過空行和標題行
         if (!line || line.startsWith('Original Q#')) {
             continue;
         }
@@ -117,24 +117,24 @@ function parseQuestionsData() {
         // 使用 ||| 分隔符分割每一行
         const parts = line.split('|||');
         
-        // 确保有足够的字段（题号、问题、答案、学习笔记）
+        // 確保有足夠的欄位（題號、問題、答案、學習筆記）
         if (parts.length >= 4) {
             const questionNumber = parts[0].trim();
             const question = parts[1].trim();
             const answer = parts[2].trim();
             const studyNote = parts[3].trim();
             
-            // 只有当问题不为空时才添加
+            // 只有當問題不為空時才添加
             if (question) {
                 questions.push({
                     number: questionNumber,
                     question: question,
-                    answer: answer || '暂无答案',
-                    studyNote: studyNote || '暂无学习笔记'
+                    answer: answer || '暫無答案',
+                    studyNote: studyNote || '暫無學習筆記'
                 });
             }
         } else if (parts.length === 3) {
-            // 处理只有题号、问题、答案的情况（没有学习笔记）
+            // 處理只有題號、問題、答案的情況（沒有學習筆記）
             const questionNumber = parts[0].trim();
             const question = parts[1].trim();
             const answer = parts[2].trim();
@@ -143,8 +143,8 @@ function parseQuestionsData() {
                 questions.push({
                     number: questionNumber,
                     question: question,
-                    answer: answer || '暂无答案',
-                    studyNote: '暂无学习笔记'
+                    answer: answer || '暫無答案',
+                    studyNote: '暫無學習筆記'
                 });
             }
         }
@@ -153,6 +153,6 @@ function parseQuestionsData() {
     return questions;
 }
 
-// 导出解析后的题库数据
+// 導出解析後的題庫數據
 const questionsData = parseQuestionsData();
 
